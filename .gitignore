@@ -3,4 +3,5 @@
 *.iml
 node_modules/
 build/
+*.log*
 npm-debug.log
