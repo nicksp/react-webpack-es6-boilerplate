@@ -40,7 +40,6 @@ const plugins = [
 
 const sassLoaders = [
   'css-loader?sourceMap',
-  'autoprefixer-loader',
   'sass-loader?outputStyle=compressed'
 ];
 
