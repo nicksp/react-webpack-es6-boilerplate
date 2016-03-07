@@ -23,9 +23,11 @@ const plugins = [
 const sassLoaders = [
   'style-loader',
   'css-loader?sourceMap',
-  'autoprefixer-loader',
   'sass-loader?outputStyle=expanded'
 ];
+
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
 
 module.exports = {
   env : process.env.NODE_ENV,
@@ -59,7 +61,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!autoprefixer-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
@@ -73,5 +75,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, '../src'),
     port: 3000
   },
-  devtool: 'eval'
+  devtool: 'eval',
+  postcss: function () {
+      return [autoprefixer, precss];
+  }
 };

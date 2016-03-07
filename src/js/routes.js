@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
 
-import App from './components/App';
+import App from './components/app';
 import FriendListApp from './containers/FriendListApp/FriendListApp';
 import NotFoundView from './views/NotFoundView';
 
@@ -12,3 +12,4 @@ export default (
     <Redirect from="*" to="404" />
   </Route>
 );
+
