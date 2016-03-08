@@ -13,7 +13,7 @@ export default (
     <Route path="ab" component={About} />
     <Route path="fl" component={FriendListApp} />
     <Route path="*" component={NotFoundView} />
-    debugger;
+
   </Route>
  
 );

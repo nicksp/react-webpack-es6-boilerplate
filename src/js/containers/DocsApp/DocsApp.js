@@ -33,7 +33,7 @@ class DocsApp extends Component {
     );
   }
 }
-debugger;
+
 const ConnectedDocs = connect(
     state => ({ subdivide: state.subdivide })
 )(Subdivide);

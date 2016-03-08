@@ -30,7 +30,7 @@ export default function configureStore(initialState) {
     enhancer = compose(middleware);
   }
 
-debugger;
+
 
   const store = createStore(rootReducer, initialState, enhancer);
 

@@ -35,12 +35,12 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-debugger;
+
 
 class SComponent extends Component {
     render() {
         return (
-            {ComponentEl}
+            ComponentEl
         )
     }
     
@@ -50,12 +50,12 @@ const CComponent = connect(
     state => ({ subdivide: state.subdivide })
 )(Subdivide);
 
-debugger;
+
 
 // Render the React application to the DOM
 ReactDOM.render(
   <Provider store={store}>
-    {ComponentEl}
+    <CComponent DefaultComponent={SComponent} />
   </Provider>,
   rootElement
 );
