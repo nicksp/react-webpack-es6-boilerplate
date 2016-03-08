@@ -1,11 +1,14 @@
 import '../styles/bootstrap.min.css';
 import '../styles/styles.scss';
 
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore  from './store/configureStore';
 import { Router, browserHistory } from 'react-router';
+import Subdivide, { reducer as subdivide } from 'subdivide';
+import { connect } from 'react-redux';
+
 
 import routes from './routes';
 
@@ -31,6 +34,23 @@ if (process.env.NODE_ENV !== 'production') {
     </div>
   );
 }
+
+debugger;
+
+class SComponent extends Component {
+    render() {
+        return (
+            {ComponentEl}
+        )
+    }
+    
+}
+
+const CComponent = connect(
+    state => ({ subdivide: state.subdivide })
+)(Subdivide);
+
+debugger;
 
 // Render the React application to the DOM
 ReactDOM.render(
