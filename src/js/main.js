@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore  from './store/configureStore';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory, hashHistory } from 'react-router';
 import Subdivide, { reducer as subdivide } from 'subdivide';
 import { connect } from 'react-redux';
 
@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   // If using routes
   ComponentEl = (
     <div>
-      <Router history={browserHistory} routes={routes} />
+      {routes}
       <DevTools />
     </div>
   );

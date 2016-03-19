@@ -18,6 +18,11 @@ class About extends Component {
 }
 
 class DocsApp extends Component {
+ constructor(props, ctx) {
+    super(props, ctx)
+this.state = { url: '' }
+  }
+
 
   render () {
 
