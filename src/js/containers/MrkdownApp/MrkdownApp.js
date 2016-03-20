@@ -2,11 +2,9 @@ import './MrkdownApp.scss';
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { marktex } from 'marktex';
-//import Subdivide, { reducer as subdivide } from 'subdivide';
+import marktex from 'marktex';
+import katex from 'katex';
 
-
-const ACTIVE = { color: 'red' }
 
 var txt = '**fuck markdown**';
 
@@ -21,21 +19,25 @@ var options = {
 
 var foo = 'test';
 
-
+function myFunc(err, content) {if (err) throw err;
+  console.log(content);
+  foo =content;}
+  
+marktex(txt, options, myFunc);
 
 class Mrkdown extends Component {
 
 
   render() {
     return (
-      <div>     
-        <p>Stuff is going here.</p>
+      <div>
+        <h2>Markdown</h2>
+        <div className="mrkdown" dangerouslySetInnerHTML={{__html: foo}}>
+        </div>
       </div>
     )
   }
 }
-
-//marktex('**fuck markdown**'); 
 
 export default Mrkdown;
 
