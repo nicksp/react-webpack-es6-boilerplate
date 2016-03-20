@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+
 // App files location
 const PATHS = {
   app: path.resolve(__dirname, '../src/js'),
@@ -28,6 +29,9 @@ const sassLoaders = [
 
 var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
+var subscript = require('markdown-it-sub');
+var superscript = require('markdown-it-sup');
+var json = require("json-loader");
 
 module.exports = {
   env : process.env.NODE_ENV,
@@ -67,6 +71,14 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
         loader: 'url-loader?limit=8192'
+      },
+      {
+      test:   /\.md/,
+      loader: 'markdown-it'
+      },
+      {
+      test: /\.json$/,
+      loader: 'json'
       }
     ]
   },
@@ -78,5 +90,10 @@ module.exports = {
   devtool: 'eval',
   postcss: function () {
       return [autoprefixer, precss];
+  },
+  'markdown-it': {
+    preset: 'default',
+    typographer: true,
+    use: [subscript, superscript]
   }
 };
