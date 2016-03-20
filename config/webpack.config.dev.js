@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+
 // App files location
 const PATHS = {
   app: path.resolve(__dirname, '../src/js'),
@@ -23,9 +24,14 @@ const plugins = [
 const sassLoaders = [
   'style-loader',
   'css-loader?sourceMap',
-  'autoprefixer-loader',
   'sass-loader?outputStyle=expanded'
 ];
+
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
+var subscript = require('markdown-it-sub');
+var superscript = require('markdown-it-sup');
+var json = require("json-loader");
 
 module.exports = {
   env : process.env.NODE_ENV,
@@ -59,12 +65,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!autoprefixer-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
         loader: 'url-loader?limit=8192'
+      },
+      {
+      test:   /\.md/,
+      loader: 'markdown-it'
+      },
+      {
+      test: /\.json$/,
+      loader: 'json'
       }
     ]
   },
@@ -73,5 +87,13 @@ module.exports = {
     contentBase: path.resolve(__dirname, '../src'),
     port: 3000
   },
-  devtool: 'eval'
+  devtool: 'eval',
+  postcss: function () {
+      return [autoprefixer, precss];
+  },
+  'markdown-it': {
+    preset: 'default',
+    typographer: true,
+    use: [subscript, superscript]
+  }
 };

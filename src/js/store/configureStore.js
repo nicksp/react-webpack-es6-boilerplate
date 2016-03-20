@@ -30,6 +30,8 @@ export default function configureStore(initialState) {
     enhancer = compose(middleware);
   }
 
+
+
   const store = createStore(rootReducer, initialState, enhancer);
 
   // Enable Webpack hot module replacement for reducers

@@ -1,11 +1,14 @@
 import '../styles/bootstrap.min.css';
 import '../styles/styles.scss';
 
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore  from './store/configureStore';
-import { Router, browserHistory } from 'react-router';
+import { Router, browserHistory, hashHistory } from 'react-router';
+import Subdivide, { reducer as subdivide } from 'subdivide';
+import { connect } from 'react-redux';
+
 
 import routes from './routes';
 
@@ -20,7 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   // If using routes
   ComponentEl = (
     <div>
-      <Router history={browserHistory} routes={routes} />
+      {routes}
       <DevTools />
     </div>
   );
@@ -32,10 +35,27 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
+
+
+class SComponent extends Component {
+    render() {
+        return (
+            ComponentEl
+        )
+    }
+    
+}
+
+const CComponent = connect(
+    state => ({ subdivide: state.subdivide })
+)(Subdivide);
+
+
+
 // Render the React application to the DOM
 ReactDOM.render(
   <Provider store={store}>
-    {ComponentEl}
+    <CComponent DefaultComponent={SComponent} />
   </Provider>,
   rootElement
 );

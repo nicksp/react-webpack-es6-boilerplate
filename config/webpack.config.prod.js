@@ -40,9 +40,11 @@ const plugins = [
 
 const sassLoaders = [
   'css-loader?sourceMap',
-  'autoprefixer-loader',
   'sass-loader?outputStyle=compressed'
 ];
+
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
 
 module.exports = {
   entry: {
@@ -76,7 +78,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: PATHS.styles,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       },
       // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
@@ -90,5 +92,8 @@ module.exports = {
     ]
   },
   plugins: plugins,
-  devtool: 'source-map'
+  devtool: 'source-map',
+  postcss: function () {
+      return [autoprefixer, precss];
+  }
 };

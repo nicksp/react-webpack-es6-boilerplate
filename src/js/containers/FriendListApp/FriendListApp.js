@@ -14,7 +14,7 @@ class FriendListApp extends Component {
 
     return (
       <div className="friendListApp">
-        <h1>Da Bro's List</h1>
+        <h1>DJ's List</h1>
         <AddFriendInput addFriend={actions.addFriend} />
         <FriendList friends={friendsById} actions={actions} />
       </div>
