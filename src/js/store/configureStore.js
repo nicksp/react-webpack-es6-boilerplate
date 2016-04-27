@@ -4,13 +4,12 @@ import { persistState } from 'redux-devtools';
 
 export default function configureStore(initialState) {
 
+  let middleware = applyMiddleware();
   let enhancer;
-  let middleware;
 
   if (process.env.NODE_ENV !== 'production') {
 
     let middlewares = [require('redux-immutable-state-invariant')()];
-
     middleware = applyMiddleware(...middlewares);
 
     let getDebugSessionKey = function () {
@@ -31,8 +30,6 @@ export default function configureStore(initialState) {
       persistState(getDebugSessionKey())
     );
   } else {
-    let middlewares = [];
-    middleware = applyMiddleware(...middlewares);
     enhancer = compose(middleware);
   }
 
