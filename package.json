@@ -60,6 +60,7 @@
     "redux-devtools": "3.2.0",
     "redux-devtools-dock-monitor": "1.1.1",
     "redux-devtools-log-monitor": "1.0.11",
+    "redux-immutable-state-invariant" : "1.2.3",
     "redux-slider-monitor": "1.0.5",
     "sass-loader": "3.1.2",
     "style-loader": "0.13.0",
