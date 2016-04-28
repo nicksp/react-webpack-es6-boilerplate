@@ -10,7 +10,6 @@ export default function configureStore(initialState) {
   if (process.env.NODE_ENV !== 'production') {
 
     let middlewares = [require('redux-immutable-state-invariant')()];
-
     middleware = applyMiddleware(...middlewares);
 
     let getDebugSessionKey = function () {
