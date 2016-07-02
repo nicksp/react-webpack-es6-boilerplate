@@ -1,19 +1,22 @@
-import { renderComponent, expect } from '../testHelper';
+import { configureContainer, expect } from '../testHelper';
 import FriendListApp from '../../../src/js/containers/FriendListApp/FriendListApp';
+
+
+import { shallow, mount, render } from 'enzyme';
 
 describe('FriendListApp', () => {
 
   let component;
 
   beforeEach(() => {
-    component = renderComponent(FriendListApp);
+    component = mount(configureContainer(FriendListApp))
   });
 
   it('shows an input to add a new friend', () => {
-    expect(component.find('.addFriendInput')).to.exist;
+    expect(component.find('.addFriendInput')).to.have.length(1);
   });
 
   it('shows a friend list', () => {
-    expect(component.find('.friendList')).to.exist;
+    expect(component.find('.friendList')).to.have.length(1);
   });
 });

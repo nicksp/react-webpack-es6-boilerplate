@@ -18,15 +18,10 @@ const $ = jq(window);
 // Set up chai-jquery
 chaiJquery(chai, chai.util, $);
 
-function renderComponent(ComponentClass, props = {}, state = {}) {
-  const componentInstance = ReactTestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers, state)}>
+function configureContainer(ComponentClass, props = {}, state = {}) {
+  return <Provider store={createStore(reducers, state)}>
       <ComponentClass {...props} />
     </Provider>
-  );
-
-  // Produces HTML
-  return $(ReactDOM.findDOMNode(componentInstance));
 }
 
 function mockHistory(component) {
@@ -42,4 +37,4 @@ $.fn.simulate = function(eventName, value) {
   ReactTestUtils.Simulate[eventName](this[0]);
 };
 
-export { renderComponent, mockHistory, expect };
+export { configureContainer, mockHistory, expect };
