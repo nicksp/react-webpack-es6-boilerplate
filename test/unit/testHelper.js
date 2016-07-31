@@ -5,7 +5,7 @@ import ReactTestUtils from 'react-addons-test-utils';
 import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
 import chaiJquery from 'chai-jquery';
-import createHistory from 'history/lib/createBrowserHistory';
+import createHistory from 'react-router/lib/browserHistory';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../../src/js/reducers';
