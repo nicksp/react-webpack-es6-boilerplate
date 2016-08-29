@@ -1,0 +1,23 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 6
+  - 4
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm i -g npm@latest
+  - npm install
+
+script:
+  - npm run test
+  - npm run lint
+  - npm run jscs
+  - npm run prebuild
+  - npm run build
+  - npm run build:html
