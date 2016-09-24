@@ -38,7 +38,7 @@ module.exports = {
       // JavaScript / ES6
       {
         test: /\.jsx?$/,
-        include: path.resolve(__dirname, "../src/client/assets/javascripts"),
+        include: path.resolve(__dirname, '../src/client/assets/javascripts'),
         loader: 'babel'
       },
       // Images

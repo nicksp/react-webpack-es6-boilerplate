@@ -33,9 +33,9 @@ module.exports = merge(config, {
       {
         test: /\.scss$/,
         include: [
-          path.resolve(__dirname, "../src/client/assets/javascripts"),
-          path.resolve(__dirname, "../src/client/assets/styles"),
-          path.resolve(__dirname, "../src/client/scripts")
+          path.resolve(__dirname, '../src/client/assets/javascripts'),
+          path.resolve(__dirname, '../src/client/assets/styles'),
+          path.resolve(__dirname, '../src/client/scripts')
         ],
         loaders: [
           'style',
