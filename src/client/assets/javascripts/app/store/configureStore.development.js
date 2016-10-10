@@ -1,8 +1,8 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore } from 'redux';
 import { persistState } from 'redux-devtools';
-import promiseMiddleware from 'redux-promise';
 import createLogger from 'redux-logger';
 
+import enhancerCreator from './enhancerCreator';
 import rootReducer from '../reducer';
 import DevTools from '../DevTools';
 
@@ -14,20 +14,22 @@ import DevTools from '../DevTools';
  */
 const logger = createLogger();
 
-const middlewares = [promiseMiddleware, logger, require('redux-immutable-state-invariant')()];
+const middleware = [logger, require('redux-immutable-state-invariant')()];
+
+/**
+ * Additional store enhancers
+ */
+const devTools = window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument();
 
 // By default we try to read the key from ?debug_session=<key> in the address bar
-const getDebugSessionKey = function () {
+const getDebugSessionKey = () => {
   const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
   return (matches && matches.length) ? matches[1] : null;
 };
 
-const enhancer = compose(
-  applyMiddleware(...middlewares),
-  window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument(),
-  // Optional. Lets you write ?debug_session=<key> in address bar to persist debug sessions
-  persistState(getDebugSessionKey())
-);
+const enhancers = [devTools, persistState(getDebugSessionKey())];
+
+const enhancer = enhancerCreator(enhancers, middleware);
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState, enhancer);

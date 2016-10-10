@@ -1,12 +1,10 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import promiseMiddleware from 'redux-promise';
+import { createStore } from 'redux';
 
+import enhancerCreator from './enhancerCreator';
 import rootReducer from '../reducer';
 
-const enhancer = compose(
-  applyMiddleware(promiseMiddleware)
-)(createStore);
+const enhancer = enhancerCreator();
 
 export default function configureStore(initialState) {
-  return enhancer(rootReducer, initialState);
+  return createStore(rootReducer, initialState, enhancer);
 }
