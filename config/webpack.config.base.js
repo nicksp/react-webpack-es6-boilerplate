@@ -5,6 +5,9 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  entry: {
+    vendor: ['react', 'react-dom', 'react-redux', 'react-router', 'react-router-redux', 'redux']
+  },
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, '../build/client'),
