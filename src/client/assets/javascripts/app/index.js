@@ -8,7 +8,6 @@ import Redbox from 'redbox-react';
 import Root from './Root';
 import configureStore from './store/configureStore';
 
-import 'styles/bootstrap.min.css';
 import 'styles/styles.scss';
 
 const store = configureStore();

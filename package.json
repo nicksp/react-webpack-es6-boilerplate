@@ -94,6 +94,7 @@
   "dependencies": {
     "autoprefixer": "6.4.1",
     "babel-runtime": "6.11.6",
+    "bootstrap-sass": "3.3.7",
     "classnames": "2.2.5",
     "lodash": "4.15.0",
     "raven-js": "3.6.1",
