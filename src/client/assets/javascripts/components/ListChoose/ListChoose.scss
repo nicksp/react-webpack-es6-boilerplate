@@ -1,0 +1,14 @@
+.ListChoose {
+	padding-left: 1em;
+}
+
+.ListChoose li {
+	cursor: pointer;
+	margin-bottom: 0.5em;
+	transition: padding-left 0.25s;
+}
+
+.ListChoose li:hover {
+	color: #E0FFFF;
+	padding-left: 0.2em;
+}

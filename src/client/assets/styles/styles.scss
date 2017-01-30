@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
 body {
-  background: #f1f1f1;
-  padding-top: 30px;
+	background-color: #8AD1C1;
+	color: white;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 1.2rem;
+	padding: 30px;
+	text-shadow: #AAA 0 0 1px;
+}
+
+ul {
+	list-style: none;
 }
