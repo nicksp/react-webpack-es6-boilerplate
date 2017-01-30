@@ -17,31 +17,31 @@ import routes from './routes';
 // window.Raven && Raven.config(SENTRY_URL).install();
 
 const Root = ({ store, history }) => {
-  let ComponentEl = (
-    <Provider store={store}>
-      <Router history={history} routes={routes} />
-    </Provider>
-  );
+	let ComponentEl = (
+		<Provider store={store}>
+			<Router history={history} routes={routes} />
+		</Provider>
+	);
 
-  if (process.env.NODE_ENV !== 'production') {
-    const DevTools = require('./DevTools').default;
+	if (process.env.NODE_ENV !== 'production') {
+		const DevTools = require('./DevTools').default;
 
-    ComponentEl = (
-      <Provider store={store}>
-        <div>
-          <Router history={history} routes={routes} />
-          {!window.devToolsExtension ? <DevTools /> : null}
-        </div>
-      </Provider>
-    );
-  }
+		ComponentEl = (
+			<Provider store={store}>
+				<div>
+					<Router history={history} routes={routes} />
+					{!window.devToolsExtension ? <DevTools /> : null}
+				</div>
+			</Provider>
+		);
+	}
 
-  return ComponentEl;
+	return ComponentEl;
 };
 
 Root.propTypes = {
-  history: PropTypes.object.isRequired,
-  store: PropTypes.object.isRequired
+	history: PropTypes.object.isRequired,
+	store: PropTypes.object.isRequired
 };
 
 export default Root;

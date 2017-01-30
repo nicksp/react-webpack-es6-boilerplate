@@ -5,8 +5,16 @@ body {
 	color: white;
 	font-family: 'Oxygen', sans-serif;
 	font-size: 1.2rem;
-	padding: 30px;
 	text-shadow: #AAA 0 0 1px;
+}
+
+.page-container {
+	margin: 3em 2em;
+	position: relative;
+}
+
+h2 {
+	margin-top: 0;
 }
 
 ul {

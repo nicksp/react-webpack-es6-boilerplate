@@ -109,6 +109,7 @@
     "recompose": "0.22.0",
     "redux": "3.5.2",
     "redux-logger": "2.6.1",
+    "redux-persist": "4.1.0",
     "redux-promise": "0.5.3",
     "reselect": "2.5.3"
   }

@@ -1,0 +1,30 @@
+.ActionPlan {
+	min-width: 25em;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.ActionPlan__pledge {
+	border-radius: 0.5em;
+	margin-bottom: 1em;
+	padding: 0.5em;
+}
+
+.ActionPlan__date {
+	color: #555;
+}
+
+.ActionPlan__category {
+	opacity: 0.4;
+	padding-left: 0.5em;
+	transition: opacity 0.25s;
+}
+
+.ActionPlan__pledge:hover {
+	background-color: #82C4B5;
+}
+
+.ActionPlan__pledge:hover .ActionPlan__category {
+	opacity: 0.9;
+}

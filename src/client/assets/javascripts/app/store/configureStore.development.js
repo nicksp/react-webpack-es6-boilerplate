@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
 import promiseMiddleware from 'redux-promise';
 import createLogger from 'redux-logger';
+import { persistStore, autoRehydrate } from 'redux-persist';
 
 import rootReducer from '../reducer';
 import DevTools from '../DevTools';
@@ -26,11 +27,15 @@ const enhancer = compose(
   applyMiddleware(...middlewares),
   window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument(),
   // Optional. Lets you write ?debug_session=<key> in address bar to persist debug sessions
-  persistState(getDebugSessionKey())
+  persistState(getDebugSessionKey()),
+	autoRehydrate()
 );
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState, enhancer);
+	persistStore(store, {
+		blacklist: ['routing']
+	});
 
   // Enable hot module replacement for reducers (requires Webpack or Browserify HMR to be enabled)
   if (module.hot) {

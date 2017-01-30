@@ -15,19 +15,35 @@ class ActionEnter extends Component {
 		addPledge: PropTypes.func, // connect()
 		date: PropTypes.object, // moment
 		params: PropTypes.object,
-		plan: PropTypes.object,
 		setDate: PropTypes.func, // from withState()
 		setText: PropTypes.func, // from withState()
 		text: PropTypes.string
 	}
 
 	pledge = () => {
-		const { addPledge, date, text } = this.props;
+		const {
+			addPledge,
+			date,
+			params,
+			text,
+			setDate,
+			setText
+		} = this.props;
+		const { focus, type } = params;
 		const pledge = {
 			date,
-			text
+			focus,
+			text,
+			type
 		};
 		addPledge(pledge);
+		setText('');
+		setDate(null);
+	}
+
+	clearDate = (evt) => {
+		evt.stopPropagation();
+		this.setDate(null);
 	}
 
 	setDate = (date) => this.props.setDate(date) // Ignore further arguments
@@ -37,24 +53,16 @@ class ActionEnter extends Component {
 		const {
 			date,
 			params,
-			plan,
 			text
 		} = this.props;
 		const { focus, type } = params;
-
-		const pledges = plan.toArray().map((pledge) => (
-			<div key={pledge.get('id')}>
-				{pledge.get('text')}
-				at {pledge.get('date')}
-			</div>
-		));
 
 		return (
 			<div className="ActionEnter">
 				<h2>Action you're taking:</h2>
 				<div className="ActionEnter__textarea">
 					<textarea value={text} onChange={this.setText} />
-					<DatePicker customInput={<Calendar />}
+					<DatePicker customInput={<Calendar clear={this.clearDate} />}
 							minDate={NOW}
 							selected={date}
 							onChange={this.setDate} />
@@ -65,18 +73,13 @@ class ActionEnter extends Component {
 				<button className="ActionEnter__pledge"
 						disabled={!text}
 						onClick={this.pledge}>Pledge</button>
-				{pledges}
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {plan: state.plan};
-}
-
 export default compose(
-	connect(mapStateToProps, { addPledge }),
+	connect(null, { addPledge }),
 	withState('date', 'setDate', null),
-	withState('text', 'setText', null)
+	withState('text', 'setText', '')
 )(ActionEnter);

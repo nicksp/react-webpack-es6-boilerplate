@@ -1,5 +1,7 @@
 import Immutable from 'Immutable';
-import { uniqId } from 'lodash';
+import { mapValues } from 'lodash';
+import moment from 'moment';
+import { REHYDRATE } from 'redux-persist/constants';
 
 import { ADD_PLEDGE } from './actions';
 
@@ -9,13 +11,26 @@ export default function plan(state = DEFAULT, action) {
 	switch (action.type) {
 		case ADD_PLEDGE: {
 			const { pledge } = action;
-			const id = pledge.id || uniqId('pledge:');
+			const id = pledge.id || state.size;
 			const update = {
 				...pledge,
 				id
 			};
-			return state.set(id, update);
+			return state.merge({[id]: update});
 		}
+
+		case REHYDRATE:
+			if (action.payload && action.payload.plan) {
+				const mapped = mapValues(action.payload.plan, (pledge) => (
+					{
+						...pledge,
+						date: moment(pledge.date)
+					}
+				));
+				return Immutable.fromJS(mapped);
+			} else {
+				return state;
+			}
 
 		default:
 			return state;
