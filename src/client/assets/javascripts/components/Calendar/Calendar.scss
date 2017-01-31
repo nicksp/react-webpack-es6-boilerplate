@@ -1,23 +1,28 @@
 .Calendar__value {
-	color: #777;
+	color: #A1A1A1;
 	display: inline-block;
 	line-height: 2em;
 	padding-right: 0.5em;
+	font-size: 0.9em;
 }
 
 .Calendar svg {
-	fill: #777;
+	cursor: pointer;
+	fill: #A1A1A1;
 	max-height: 2em;
 	max-width: 2em;
 	vertical-align: middle;
 }
 
 .Calendar__clear {
-	background: none;
-	border-radius: 0.25em;
+	background: #EEEFF0;
+	border-radius: 25px;
+	border: none;
+	cursor: pointer;
 	color: inherit;
 	font-size: inherit;
 	line-height: 1em;
-	margin: 0.25em 0.5em;
+	margin: 0.25em 0.4em;
 	padding: 0.25em 0.5em;
+	font-weight: bold;
 }

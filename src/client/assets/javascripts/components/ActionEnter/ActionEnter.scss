@@ -21,18 +21,19 @@
 }
 
 .ActionEnter__breadcrumbs {
-	margin-top: 1.5em;
-	border-top: thin solid rgba(238, 238, 238, 0.5)
+	margin-top: 0.8em;
+	text-align: center;
 }
 
 .ActionEnter__pledge {
-	background-color: #1F5C78;
-	border-radius: 10%;
-	color: white;
+	border: none;
+	background: none;
+	color: #FFF;
 	cursor: pointer;
 	display: block;
 	font-size: 1.25em;
 	margin: 1em auto;
+	margin-top: 5em;
 	padding: 0.5em;
 }
 .ActionEnter__pledge[disabled] {
