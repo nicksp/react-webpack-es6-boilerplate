@@ -1,0 +1,25 @@
+Welcome
+    * Show welcome page first with a message about the purpose of the app.
+    * Include "Make a plan" button/link to start process.
+
+ListChoose
+    *
+
+ActionEnter
+    * Add padding inside of the text box so the text isn't right against the edge.
+    * Use x icon from x.svg file to cancel out date.
+
+GetIdeas
+    * Is it possible for this page to populate with different ideas depending on what is chosen, or do we need separate pages for each?
+
+ActionPlan
+    * Allow new lines to be displayed if they were a part of ActionEnter?
+    * Add "Add More" button that sends you back to ListChoose page.
+    * Create mailto: link so you can email the plan to yourself.
+    * Make it so you have the option to add your action to your calendar.
+    * Make it possible to remove items from plan.
+    * Make page show up as in a new screen instead of always showing (thinking mobile-friendly)
+
+General
+    * Add back button to all pages except Welcome.
+    * For each page, center everything on the screen.
