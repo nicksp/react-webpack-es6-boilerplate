@@ -1,5 +1,6 @@
 .ActionEnter {
 	display: inline-block;
+	text-align: center;
 }
 
 .ActionEnter__textarea {
@@ -9,7 +10,6 @@
 }
 
 .ActionEnter textarea {
-	font-family: inherit;
 	height: 100%;
 	width: 100%;
 }
@@ -25,6 +25,17 @@
 	text-align: center;
 }
 
+.ActionEnter__getIdeas {
+	border: none;
+	background: none;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	font-size: 1.1em;
+	margin: auto;
+	margin-top: 6em;
+}
+
 .ActionEnter__pledge {
 	border: none;
 	background: none;
@@ -32,10 +43,10 @@
 	cursor: pointer;
 	display: block;
 	font-size: 1.25em;
-	margin: 1em auto;
-	margin-top: 5em;
-	padding: 0.5em;
+	margin: auto;
+	margin-top: 0.25em;
 }
+
 .ActionEnter__pledge[disabled] {
 	cursor: default;
 	opacity: 0.75;

@@ -4,9 +4,10 @@
 
 .ListChoose li {
 	cursor: pointer;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.7em;
 	transition: padding-left 0.25s;
 	font-weight: bold;
+	font-size: 1.05em;
 }
 
 .ListChoose li:hover {

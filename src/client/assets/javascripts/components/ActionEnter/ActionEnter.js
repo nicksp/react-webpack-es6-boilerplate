@@ -70,6 +70,8 @@ class ActionEnter extends Component {
 				<div className="ActionEnter__breadcrumbs">
 					{focus} - {type}
 				</div>
+				<button className="ActionEnter__getIdeas"
+						onClick={this.pledge}>Get ideas</button>
 				<button className="ActionEnter__pledge"
 						disabled={!text}
 						onClick={this.pledge}>Add to my plan</button>
