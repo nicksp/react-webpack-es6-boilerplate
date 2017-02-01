@@ -72,7 +72,7 @@ class ActionEnter extends Component {
 				</div>
 				<button className="ActionEnter__pledge"
 						disabled={!text}
-						onClick={this.pledge}>Pledge</button>
+						onClick={this.pledge}>Add to my plan</button>
 			</div>
 		);
 	}

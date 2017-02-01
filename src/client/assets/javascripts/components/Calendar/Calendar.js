@@ -15,7 +15,7 @@ export default function Calendar({ clear, onClick, value }) {
 			{value && (
 				<div className="Calendar__value">
 					<button className="Calendar__clear"
-							onClick={clear}>✗</button>
+							onClick={clear}>x</button>
 					{value}
 				</div>
 			)}
