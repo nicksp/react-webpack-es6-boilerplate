@@ -46,7 +46,6 @@ class ActionPlan extends Component {
 				</div>
 			</div>
 		);
-
 	}
 
 }
