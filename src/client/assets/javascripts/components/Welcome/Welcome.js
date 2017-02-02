@@ -14,7 +14,7 @@ class Welcome extends Component {
 					</div>
 					<div className="Welcome_go">
 						<Link className="Welcome_link" to="select">
-							Go
+							Make a plan
 						</Link>
 					</div>
 			</div>
