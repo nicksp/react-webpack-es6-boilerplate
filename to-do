@@ -15,7 +15,7 @@ GetIdeas
 ActionPlan
     * Allow new lines to be displayed if they were a part of ActionEnter?
     * ROCHELLE: Add "Add More" button that sends you back to ListChoose page.
-    * ROCHELLE: Create mailto: link so you can email the plan to yourself.
+    * Create mailto: link so you can email the plan to yourself.
     * Make it so you have the option to add your action to your calendar.
     * Make it possible to remove items from plan.
     * Make page show up as in a new screen instead of always showing (thinking mobile-friendly)
