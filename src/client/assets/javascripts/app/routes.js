@@ -10,10 +10,11 @@ import Welcome from 'components/Welcome';
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={Welcome} />
+		<Route path="select" component={AddAction} >
+			<Route path=":focus" component={AddAction} />
+			<Route path=":focus/:type" component={ActionEnter} />
+		</Route>
 		<Route path="404" component={NotFoundView} />
-		<Route path="select" component={AddAction} />
-		<Route path=":focus" component={AddAction} />
-		<Route path=":focus/:type" component={ActionEnter} />
 		<Redirect from="*" to="404" />
 	</Route>
 );
