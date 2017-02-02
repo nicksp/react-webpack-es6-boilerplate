@@ -12,7 +12,7 @@ class AddAction extends Component {
 	select = (val) => {
 		const { params, router } = this.props;
 		const { focus = '' } = params;
-		const newRoute = focus + '/' + val;
+		const newRoute = '/select' + focus + '/' + val;
 		router.push(newRoute);
 	}
 

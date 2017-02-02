@@ -36,6 +36,10 @@
 	margin-top: 6em;
 }
 
+.ActionEnter__getIdeas:hover {
+	color: #E0FFFF;
+}
+
 .ActionEnter__pledge {
 	border: none;
 	background: none;
@@ -49,5 +53,9 @@
 
 .ActionEnter__pledge[disabled] {
 	cursor: default;
-	opacity: 0.75;
+	opacity: 0.3;
+}
+
+.ActionEnter__pledge:hover:enabled {
+	color: #E0FFFF;
 }

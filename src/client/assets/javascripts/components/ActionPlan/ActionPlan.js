@@ -39,7 +39,6 @@ class ActionPlan extends Component {
 			</div>
 		);
 	}
-
 }
 
 function mapStateToProps(state) {
