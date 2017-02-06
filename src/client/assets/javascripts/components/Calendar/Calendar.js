@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import CalIcon from 'images/calendar.svg';
+import XIcon from 'images/x.svg';
 
 import './Calendar.scss';
 
@@ -13,9 +14,9 @@ export default function Calendar({ clear, onClick, value }) {
 	return (
 		<div className="Calendar" onClick={onClick}>
 			{value && (
-				<div className="Calendar_value">
-					<button className="Calendar_clear"
-							onClick={clear}>×</button>
+				<div className="Calendar__value">
+					<button className="Calendar__clear"
+							onClick={clear}><XIcon /></button>
 					{value}
 				</div>
 			)}

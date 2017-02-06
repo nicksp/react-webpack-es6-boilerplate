@@ -17,7 +17,12 @@ class ActionEnter extends Component {
 		params: PropTypes.object,
 		setDate: PropTypes.func, // from withState()
 		setText: PropTypes.func, // from withState()
-		text: PropTypes.string
+		text: PropTypes.string // from withState()
+	}
+
+	clearDate = (evt) => {
+		evt.stopPropagation();
+		this.setDate(null);
 	}
 
 	pledge = () => {
@@ -39,11 +44,6 @@ class ActionEnter extends Component {
 		addPledge(pledge);
 		setText('');
 		setDate(null);
-	}
-
-	clearDate = (evt) => {
-		evt.stopPropagation();
-		this.setDate(null);
 	}
 
 	setDate = (date) => this.props.setDate(date) // Ignore further arguments
