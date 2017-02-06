@@ -6,7 +6,7 @@
 	font-size: 0.9em;
 }
 
-.Calendar svg {
+.Calendar > svg {
 	cursor: pointer;
 	fill: #A1A1A1;
 	max-height: 2em;
@@ -15,14 +15,14 @@
 }
 
 .Calendar__clear {
-	background: #EEEFF0;
-	border-radius: 25px;
+	background: none;
 	border: none;
+	vertical-align: bottom;
+}
+
+.Calendar__clear svg {
 	cursor: pointer;
-	color: inherit;
-	font-size: inherit;
-	line-height: 1em;
-	margin: 0.25em 0.4em;
-	padding: 0.25em 0.5em;
-	font-weight: bold;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0.25em 0;
 }

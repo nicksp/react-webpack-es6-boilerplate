@@ -1,0 +1,25 @@
+.Welcome {
+	display: inline-block;
+}
+
+.Welcome__message {
+	display: inline-block;
+	font-size: 1.05em;
+	width: 35%;
+	margin-top: 1em;
+}
+
+.Welcome__go {
+	margin-top: 3em;
+}
+
+.Welcome__link {
+	text-decoration: none;
+	color: #FFF;
+	cursor: pointer;
+	font-size: 1.25em;
+}
+
+.Welcome__link:hover {
+	color: #E0FFFF;
+}

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { compose, withState } from 'recompose';
+import { Link } from 'react-router';
 
 import './ActionPlan.scss';
 class ActionPlan extends Component {
@@ -35,6 +36,9 @@ class ActionPlan extends Component {
 		return (
 			<div className="ActionPlan">
 				<h2>My action plan:</h2>
+				<Link className="ActionPlan__link" to="/select">
+					Add more
+				</Link>
 				{pledges}
 			</div>
 		);

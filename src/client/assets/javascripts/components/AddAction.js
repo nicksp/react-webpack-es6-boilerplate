@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ListChoose from './ListChoose';
 import { withRouter } from 'react-router';
+import { compact } from 'lodash';
 
 class AddAction extends Component {
 	static propTypes = {
@@ -11,8 +12,8 @@ class AddAction extends Component {
 
 	select = (val) => {
 		const { params, router } = this.props;
-		const { focus = '' } = params;
-		const newRoute = focus + '/' + val;
+		const { focus } = params;
+		const newRoute = compact(['/select', focus, val]).join('/');
 		router.push(newRoute);
 	}
 
