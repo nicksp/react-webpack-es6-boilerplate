@@ -2,28 +2,24 @@
 	display: inline-block;
 }
 
-.Welcome_message {
+.Welcome__message {
 	display: inline-block;
 	font-size: 1.05em;
 	width: 25%;
 	margin-top: 1em;
 }
 
-.Welcome_go {
-	margin-top: 4em;
+.Welcome__go {
+	margin-top: 3em;
 }
 
-
-.Welcome_link {
-	background: #408776;
-	border-radius: 0.15em;
-	padding: 0.3em 0.7em;
+.Welcome__link {
 	text-decoration: none;
 	color: #FFF;
 	cursor: pointer;
 	font-size: 1.25em;
 }
 
-.Welcome_link:hover {
+.Welcome__link:hover {
 	color: #E0FFFF;
 }

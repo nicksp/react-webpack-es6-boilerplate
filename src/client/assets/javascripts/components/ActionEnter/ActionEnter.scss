@@ -10,8 +10,9 @@
 }
 
 .ActionEnter textarea {
-	height: 100%;
-	width: 100%;
+	padding: 1em;
+	height: calc(100% - 2em);
+	width: calc(100% - 2em);
 }
 
 .ActionEnter .react-datepicker__input-container {
