@@ -10,7 +10,8 @@ class Welcome extends Component {
 			<div className="Welcome">
 				<h2>Welcome</h2>
 					<div className="Welcome_message">
-						We're here to help you create an actionable plan. Commit to actions...
+						APP NAME helps you to create a tangible plan in resisting oppressive policies and practices.
+						Make a plan and take actionable steps today.
 					</div>
 					<div className="Welcome_go">
 						<Link className="Welcome_link" to="select">
