@@ -43,13 +43,15 @@
 
 .ActionEnter__pledge {
 	border: none;
-	background: none;
+	background: #418d7b;
+	border-radius: 0.2em;
 	color: #FFF;
 	cursor: pointer;
 	display: block;
 	font-size: 1.25em;
 	margin: auto;
-	margin-top: 0.25em;
+	margin-top: 0.5em;
+	padding: 0.4em;
 }
 
 .ActionEnter__pledge[disabled] {
@@ -58,5 +60,5 @@
 }
 
 .ActionEnter__pledge:hover:enabled {
-	color: #E0FFFF;
+	background: #397768;
 }

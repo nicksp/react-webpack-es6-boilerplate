@@ -29,13 +29,20 @@
 	opacity: 0.9;
 }
 
+.ActionPlan__more {
+	margin-top: 8em;
+}
+
 .ActionPlan__link {
-	text-decoration: none;
+	background: #418d7b;
+	border-radius: 0.2em;
 	color: #FFF;
 	cursor: pointer;
 	font-size: 1.25em;
+	padding: 0.4em;
+	text-decoration: none
 }
 
 .ActionPlan__link:hover {
-	color: #E0FFFF;
+	background: #397768;
 }

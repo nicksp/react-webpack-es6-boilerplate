@@ -36,10 +36,12 @@ class ActionPlan extends Component {
 		return (
 			<div className="ActionPlan">
 				<h2>My action plan:</h2>
-				<Link className="ActionPlan__link" to="/select">
-					Add more
-				</Link>
 				{pledges}
+				<div className="ActionPlan__more">
+					<Link className="ActionPlan__link" to="/select">
+						Add more
+					</Link>
+				</div>
 			</div>
 		);
 	}
