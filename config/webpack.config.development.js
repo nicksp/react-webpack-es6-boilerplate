@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const config = require('./webpack.config.base');
 const path = require('path');
 
-
 const GLOBALS = {
   'process.env': {
     'NODE_ENV': JSON.stringify('development')

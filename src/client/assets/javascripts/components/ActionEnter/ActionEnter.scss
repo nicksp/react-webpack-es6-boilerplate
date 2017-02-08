@@ -1,0 +1,64 @@
+.ActionEnter {
+	display: inline-block;
+	text-align: center;
+}
+
+.ActionEnter__textarea {
+	height: 10em;
+	width: 20em;
+	position: relative;
+}
+
+.ActionEnter textarea {
+	padding: 1em;
+	height: calc(100% - 2em);
+	width: calc(100% - 2em);
+}
+
+.ActionEnter .react-datepicker__input-container {
+	position: absolute;
+	right: 0.2em;
+	bottom: 0.2em;
+}
+
+.ActionEnter__breadcrumbs {
+	margin-top: 0.8em;
+	text-align: center;
+}
+
+.ActionEnter__getIdeas {
+	border: none;
+	background: none;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	font-size: 1.1em;
+	margin: auto;
+	margin-top: 6em;
+}
+
+.ActionEnter__getIdeas:hover {
+	color: #E0FFFF;
+}
+
+.ActionEnter__pledge {
+	border: none;
+	background: #418d7b;
+	border-radius: 0.2em;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	font-size: 1.25em;
+	margin: auto;
+	margin-top: 0.5em;
+	padding: 0.4em;
+}
+
+.ActionEnter__pledge[disabled] {
+	cursor: default;
+	opacity: 0.3;
+}
+
+.ActionEnter__pledge:hover:enabled {
+	background: #397768;
+}

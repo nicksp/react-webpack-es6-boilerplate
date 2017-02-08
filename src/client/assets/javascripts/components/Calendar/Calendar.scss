@@ -1,0 +1,29 @@
+.Calendar__value {
+	color: #A1A1A1;
+	display: inline-block;
+	line-height: 2em;
+	padding-right: 0.5em;
+	font-size: 0.9em;
+}
+
+.Calendar > svg {
+	cursor: pointer;
+	fill: #A1A1A1;
+	max-height: 2em;
+	max-width: 2em;
+	padding: 0.3em;
+	vertical-align: middle;
+}
+
+.Calendar__clear {
+	background: none;
+	border: none;
+	vertical-align: bottom;
+}
+
+.Calendar__clear svg {
+	cursor: pointer;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0.25em 0;
+}
