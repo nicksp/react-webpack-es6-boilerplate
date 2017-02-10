@@ -33,7 +33,7 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
     "postbuild": "npm run build:html",
     "build:serve": "http-server build/client -p 3003 --cors -o",
-    "lint": "eslint config src/js/** --ext .js",
+    "lint": "eslint config/ src/client/scripts/ src/client/assets/javascripts/ --ext .js",
     "jscs": "jscs src/js/",
     "typecheck": "flow",
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --require ./test/unit/testHelper.js --recursive ./test/unit",

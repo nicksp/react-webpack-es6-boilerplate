@@ -7,6 +7,8 @@ import { Router } from 'react-router';
 import routes from './routes';
 import { SENTRY_URL } from './config';
 
+/* global Raven */
+
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
 // only synchronous routes are hot reloaded, and
