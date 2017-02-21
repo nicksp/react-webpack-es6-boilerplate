@@ -2,34 +2,34 @@
 
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import routes from './routes';
 import { SENTRY_URL } from './config';
+import  App  from './App';
 
-// If you use React Router, make this component
-// render <Router> with your routes. Currently,
-// only synchronous routes are hot reloaded, and
-// you will see a warning from <Router> on every reload.
-// You can ignore this warning. For details, see:
-// https://github.com/reactjs/react-router/issues/2182
+// With react router v4 and redux there is no need
+// for react-router-redux since it your components
+// are more declarative, you can dispatch events
+// on one of the component lifecycle methods that 
+// make sense for the component see these: 
+// https://github.com/ReactTraining/react-router/issues/3854#issuecomment-279410103
+// https://github.com/reactjs/react-router-redux/issues/454
 
 window.Raven && Raven.config(SENTRY_URL).install();
 
-const Root = ({ store, history }) => {
+const Root = ({ store }) => {
   let ComponentEl = (
     <Provider store={store}>
-      <Router history={history} routes={routes} />
+        <App />
     </Provider>
-  );
+);
 
   if (process.env.NODE_ENV !== 'production') {
     const DevTools = require('./DevTools').default;
-
     ComponentEl = (
       <Provider store={store}>
-        <div>
-          <Router history={history} routes={routes} />
+        <div>    
+          <App/>    
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>
@@ -40,7 +40,6 @@ const Root = ({ store, history }) => {
 };
 
 Root.propTypes = {
-  history: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
 };
 

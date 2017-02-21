@@ -1,7 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import Redbox from 'redbox-react';
 
@@ -12,7 +10,6 @@ import 'styles/bootstrap.min.css';
 import 'styles/styles.scss';
 
 const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
 
 // Get the DOM Element that will host our React application
 const rootEl = document.getElementById('app');
@@ -20,10 +17,11 @@ const rootEl = document.getElementById('app');
 // Render the React application to the DOM
 render(
   <AppContainer errorReporter={Redbox}>
-    <Root store={store} history={history} />
+    <Root store={store} />
   </AppContainer>,
   rootEl
 );
+
 
 if (module.hot) {
   /**
@@ -46,8 +44,8 @@ if (module.hot) {
     const NextApp = require('./Root').default;
 
     render(
-      <AppContainer errorReporter={Redbox}>
-        <NextApp store={store} history={history} />
+     <AppContainer errorReporter={Redbox}>
+        <NextApp store={store} /> 
       </AppContainer>,
       rootEl
     );
