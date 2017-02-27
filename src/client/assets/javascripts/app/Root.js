@@ -3,6 +3,7 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 import { SENTRY_URL } from './config';
 import  App  from './App';
@@ -20,7 +21,9 @@ window.Raven && Raven.config(SENTRY_URL).install();
 const Root = ({ store }) => {
   let ComponentEl = (
     <Provider store={store}>
+      <Router>
         <App />
+      </Router>
     </Provider>
 );
 
@@ -28,8 +31,10 @@ const Root = ({ store }) => {
     const DevTools = require('./DevTools').default;
     ComponentEl = (
       <Provider store={store}>
-        <div>    
-          <App/>    
+        <div>
+          <Router>
+            <App />   
+          </Router>
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>
