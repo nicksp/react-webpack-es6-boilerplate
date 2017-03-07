@@ -4,8 +4,6 @@ import FriendsView from 'features/friends/components/FriendsView';
 import NotFound from 'components/NotFound';
 import { withRouter } from 'react-router';
 
-
-
 class App extends React.Component {
 
   componentWillReceiveProps() {
@@ -32,5 +30,8 @@ class App extends React.Component {
 App.propTypes = {
   location: PropTypes.object.isRequired
 }
+
+//withRouter makes the global router props
+// available to the wrapped component
 
 export default withRouter(App);

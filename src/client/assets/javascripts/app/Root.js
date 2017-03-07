@@ -3,7 +3,6 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { withRouter } from 'react-router';
 
 import { SENTRY_URL } from './config';
 import  App  from './App';
